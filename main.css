@@ -1,23 +1,84 @@
-.background{
+.background {
     z-index: -1;
     height: 100%;
-    width:100%;
+    width: 100%;
     filter: blur(20px);
 }
-.main{
+
+.main {
     height: 100%;
-    width:100%;
+    width: 100%;
     z-index: 0;
 }
-.loginForm{
-    background-color: white;
+
+.lfpos {
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: 0%;
+    height:5.4vh;
+    width: 16vw;
+}
+
+.loginForm {
+    background-color: aqua;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 25%;
-    height: 25%;
+    height: 60%;
+    transform: translate(-50%, -50%);
 }
-body, html{
+
+.passwd {
+    background-color: rgba(206, 205, 205, 0.527);
+    padding-left:10px ;
+    height: 5vh;
+    border: none;
+    width: 12vw;
+    border-radius: 25px;
+}
+.passwd:focus{
+    outline: none;
+}
+
+.passwdBtn {
+    background-color: rgba(206, 205, 205, 0.527);
+    height: 5vh;
+    border: none;
+    width: 5vh;
+    margin-left: 1vw;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.passwdBtnIcon {
+    margin-top: 1.72%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 87.72%;
+    /*color: rgba(255, 255, 255, 0.692);*/
+}
+.usernamepos{
+    /*background-color: red;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    margin-bottom: 5%;
+    height:4vh;
+    width: 12vw;
+}
+.more{
+    margin-left: 87%;
+    position: relative;
+    bottom: 5vh;
+}
+body,
+html {
     position: fixed;
     height: 100%;
     width: 100%;
