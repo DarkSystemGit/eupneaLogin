@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .background {
     z-index: -1;
     height: 100%;
@@ -23,7 +24,7 @@
 }
 
 .loginForm {
-    background-color: aqua;
+    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,23 +64,43 @@
     /*color: rgba(255, 255, 255, 0.692);*/
 }
 .usernamepos{
-    /*background-color: red;*/
+    margin-top: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: relative;
     margin-bottom: 5%;
+    margin-left: -1.7vw;
+    margin-right: 2.5vw;
     height:4vh;
     width: 12vw;
+    text-align: center;
 }
 .more{
     margin-left: 87%;
     position: relative;
-    bottom: 5vh;
+    bottom: 6.5vh;
+}
+.profile{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    position: relative;
+    margin-left: 4.7vw;
+    margin-bottom: 0;
+}
+.profilePic{
+    border-radius: 50%;
+    height: 15vh;
+    width: 15vh;
 }
 body,
 html {
     position: fixed;
     height: 100%;
     width: 100%;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
