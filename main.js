@@ -51,5 +51,8 @@ async function getForm(){
   })
 }
 (async()=>{
-  alert(await getForm())
+  while(true){
+    alert(await getForm())
+  }
+  
 })()
