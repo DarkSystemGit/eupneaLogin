@@ -20,6 +20,7 @@ function forEach(list,fn){
       fn(list[i],i,list)
     }
   }
+  var firedEv =0
 function bindMulEv(ev,cssClass,handler){
   
   let list = document.getElementsByClassName(cssClass)
@@ -31,16 +32,24 @@ function bindMulEv(ev,cssClass,handler){
 }
 async function getForm(){
   return new Promise((resolve,reject)=>{
-    bindMulEv('click','passwdEv',(e)=>{
-      e.preventDefault()
-      resolve(document.getElementsByClassName('passwdEvFm')[0].value)
-    })
-    bindMulEv('submit','passwdEvFm',(e)=>{
-      e.preventDefault()
-      resolve(document.getElementsByClassName('passwdEvFm')[0].value)
-    })
+    if(firedEv==0){
+      firedEv =1
+      bindMulEv('click','passwdEv',(e)=>{
+        e.preventDefault()
+        firedEv =0
+        resolve(document.getElementsByClassName('passwd')[0].value)
+      })
+      bindMulEv('submit','passwdEvFm',(e)=>{
+        e.preventDefault()
+        firedEv =0
+        resolve(document.getElementsByClassName('passwd')[0].value)
+      })
+    }else{
+      resolve(document.getElementsByClassName('passwd')[0].value)
+    }
+    
   })
 }
 (async()=>{
-  console.log(await getForm())
+  alert(await getForm())
 })()
