@@ -52,7 +52,7 @@ async function getForm(){
 }
 (async()=>{
   while(true){
-    alert(await getForm())
+    var passwd = await getForm()
   }
   
 })()
