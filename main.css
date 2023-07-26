@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .background {
     z-index: -1;
     height: 100%;
@@ -13,18 +14,18 @@
 }
 
 .lfpos {
-    
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: relative;
     margin-top: 0%;
-    height:5.4vh;
+    height: 5.4vh;
     width: 16vw;
 }
 
 .loginForm {
-    
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,13 +36,14 @@
 
 .passwd {
     background-color: rgba(206, 205, 205, 0.527);
-    padding-left:10px ;
+    padding-left: 10px;
     height: 5vh;
     border: none;
     width: 12vw;
     border-radius: 25px;
 }
-.passwd:focus{
+
+.passwd:focus {
     outline: none;
 }
 
@@ -63,7 +65,8 @@
     margin-left: 87.72%;
     /*color: rgba(255, 255, 255, 0.692);*/
 }
-.usernamepos{
+
+.usernamepos {
     margin-top: 0;
     top: 50%;
     left: 50%;
@@ -72,16 +75,18 @@
     margin-bottom: 5%;
     margin-left: -1.7vw;
     margin-right: 2.5vw;
-    height:4vh;
+    height: 4vh;
     width: 12vw;
     text-align: center;
 }
-.more{
+
+.more {
     margin-left: 87%;
     position: relative;
     bottom: 6.5vh;
 }
-.profile{
+
+.profile {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -10%);
@@ -89,18 +94,71 @@
     margin-left: 4.7vw;
     margin-bottom: 0;
 }
-.profilePic{
+
+.profilePic {
     border-radius: 50%;
     height: 15vh;
     width: 15vh;
 }
+
+.modal {
+    height: 100%;
+    padding: 1%;
+}
+
+.userSelectItem {
+    height: 5%;
+    margin-left: -12.5%;
+}
+
+.userPic {
+    border-radius: 50%;
+    height: 7vh;
+    width: 7vh;
+}
+
+.itemLeft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    margin-left: 1vw;
+    margin-bottom: 2vh;
+}
+
+.itemRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+}
+
+.itemContainer {
+    border-radius: 25px;
+    height: 5.5vh;
+    
+    background-color: rgba(255, 255, 255, 0.589);
+    color: black;
+}
+
 body,
 html {
     position: fixed;
     height: 100%;
     width: 100%;
 }
-*{
+
+tr:hover {
+    background-color: rgba(57, 149, 255, 0.384);
+}
+
+table {
+    width: 100%
+}
+
+* {
     font-family: 'Roboto', sans-serif;
-    color: white;
+
 }

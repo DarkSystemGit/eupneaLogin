@@ -8,29 +8,64 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body>
     <img src="background.png" class="background">
     <div class="main">
         <div class="loginForm">
+            <div id="user-selector" class="uk-flex-top uk-modal-container" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical modal">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <h1>Choose a User</h1>
+                    <table class="uk-table uk-table-divider"><tbody>
+                        <tr class="user">
+                            <td class="uk-width-1-6"><img src="background.png" class="userPic"></td>
+                            <td class="uk-width-5-6"><div class="userSelectItem">
+                                <h5 style="margin: 0;">John Doe</h5>
+                                <p style="margin: 0;">johndoe@example.com</p>
+                            </div></td>
+                            
+                        </tr>
+                        <tr class="user">
+                            <td class="uk-width-1-6"><img src="background.png" class="userPic"></td>
+                            <td class="uk-width-5-6"><div class="userSelectItem">
+                                <h5 style="margin: 0;">Jill Doe</h5>
+                                <p style="margin: 0;">jilldoe@example.com</p>
+                            </div></td>
+                            
+                        </tr>
+                    </tbody></table>
+
+
+                </div>
+            </div>
             <div class="profile"><img src="background.png" class="profilePic"></div>
             <div class="usernamepos">
                 <p style="font-size:x-large">John Doe</p>
-                <span class="material-symbols-outlined more">expand_more</span>
+                <span class="material-symbols-outlined more" uk-toggle="target: #user-selector">expand_more</span>
             </div>
             <div class="lfpos">
                 <form style="display: flex;position: absolute;">
-                    <input type="password" class="passwd" >
-                    
-                    <input type="button" class="passwdBtn"><span class="material-symbols-outlined passwdBtnIcon">arrow_forward</span>
+                    <input type="password" class="passwd">
+
+                    <input type="button" class="passwdBtn"><span
+                        class="material-symbols-outlined passwdBtnIcon">arrow_forward</span>
                 </form>
             </div>
-            
+
         </div>
         <div class="bottomItems">
             <div class="itemLeft"></div>
-            <div class="itemRight"></div>
+            <div class="itemRight">
+                <div class="itemContainer" style="width:13vw;"><div style="padding-left:5%;z-index:1;display: flex;"><p></p><p>a</p></div></div>
+            </div>
         </div>
     </div>
 </body>
