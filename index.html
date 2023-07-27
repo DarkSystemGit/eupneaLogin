@@ -26,27 +26,8 @@
                     <button class="uk-modal-close-default" type="button" uk-close></button>
                     <h1>Choose a User</h1>
                     <table class="uk-table uk-table-divider">
-                        <tbody>
-                            <tr class="user">
-                                <td class="uk-width-1-6"><img src="background.png" class="userPic"></td>
-                                <td class="uk-width-5-6">
-                                    <div class="userSelectItem">
-                                        <h5 style="margin: 0;">John Doe</h5>
-                                        <p style="margin: 0;">johndoe@example.com</p>
-                                    </div>
-                                </td>
-
-                            </tr>
-                            <tr class="user">
-                                <td class="uk-width-1-6"><img src="background.png" class="userPic"></td>
-                                <td class="uk-width-5-6">
-                                    <div class="userSelectItem">
-                                        <h5 style="margin: 0;">Jill Doe</h5>
-                                        <p style="margin: 0;">jilldoe@example.com</p>
-                                    </div>
-                                </td>
-
-                            </tr>
+                        <tbody class="userList">
+                            
                         </tbody>
                     </table>
 
@@ -55,7 +36,7 @@
             </div>
             <div class="profile"><img src="background.png" class="profilePic"></div>
             <div class="usernamepos">
-                <p style="font-size:x-large">John Doe</p>
+                <p style="font-size:x-large" class="userName">John Doe</p>
                 <span class="material-symbols-outlined more" uk-toggle="target: #user-selector">expand_more</span>
             </div>
             <div class="lfpos">
