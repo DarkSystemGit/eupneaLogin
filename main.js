@@ -50,20 +50,32 @@ async function getForm() {
 
   })
 }
-function genUserList(users) {
+function genUserList(users, click) {
   users.forEach((user) => {
-    if(!user.profile){
-      user.profile='background.png'
+    if (!user.profile) {
+      user.profile = 'Profile.svg'
     }
-    if(!user.email){
-      user.email=''
+    if (!user.email) {
+      user.email = ''
     }
-    var userString = `<tr class="user"><td class="uk-width-1-6"><img src="${user.profile}" class="userPic"></td><td class="uk-width-5-6"><div class="userSelectItem"><h5 style="margin: 0;">${user.name}</h5><p style="margin: 0;">${user.email}</p></div></td></tr>`
-document.getElementsByClassName("userList")[0].innerHTML =document.getElementsByClassName("userList")[0].innerHTML+userString
+    var userString = `<tr class="user" id="${user.name.replaceAll(' ', '_')}userListItem"><td class="uk-width-1-6"><img src="${user.profile}" class="userPic"></td><td class="uk-width-5-6"><div class="userSelectItem"><h5 style="margin: 0;">${user.name}</h5><p style="margin: 0;">${user.email}</p></div></td></tr>`
+    document.getElementsByClassName("userList")[0].innerHTML = document.getElementsByClassName("userList")[0].innerHTML + userString
+    console.log(document.getElementById(`${user.name.replaceAll(' ', '_')}userListItem`))
+
+
   })
+  return users
+
 }
 (async () => {
-  genUserList([{name:"John Doe",email:"johndoe@example.com"},{name:"Jill Doe",email:"jilldoe@example.com"}])
+  genUserList([{ name: "John Doe"}, { name: "Jill Doe", email: "jilldoe@example.com" }]).forEach((user) => {
+    document.getElementById(`${user.name.replaceAll(' ', '_')}userListItem`).addEventListener('click', function (e) { 
+      document.getElementsByClassName('userName')[0].innerHTML = user.name
+      document.getElementsByClassName('profilePic')[0].src = user.profile
+      console.log(UIkit.modal())
+      UIkit.modal(document.getElementById('user-selector')).hide();
+    })
+  })
   while (true) {
     var user = await getForm()
     alert(user)
