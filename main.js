@@ -12,7 +12,22 @@
   
 lightdm.authenticate();
 }*/
+function fixDefaultUser(user){
+  if (typeof user === "string"){
+    user = {name:user}
+  }else{
+    user = {name:user[0]}
+  }
+  if (!user.profile) {
+    user.profile = 'Profile.svg'
+  }
+  if (!user.email) {
+    user.email = ''
+  }
+  document.getElementsByClassName('userName')[0].innerHTML = user.name
+      document.getElementsByClassName('profilePic')[0].src = user.profile
 
+}
 function forEach(list, fn) {
   //console.log(list)
   for (var i = 0; i < Object.keys(list).length; i++) {
@@ -52,6 +67,9 @@ async function getForm() {
 }
 function genUserList(users, click) {
   users.forEach((user) => {
+    if (!(typeof user === "object")){
+      user = {name:user}
+    }
     if (!user.profile) {
       user.profile = 'Profile.svg'
     }
@@ -60,7 +78,7 @@ function genUserList(users, click) {
     }
     var userString = `<tr class="user" id="${user.name.replaceAll(' ', '_')}userListItem"><td class="uk-width-1-6"><img src="${user.profile}" class="userPic"></td><td class="uk-width-5-6"><div class="userSelectItem"><h5 style="margin: 0;">${user.name}</h5><p style="margin: 0;">${user.email}</p></div></td></tr>`
     document.getElementsByClassName("userList")[0].innerHTML = document.getElementsByClassName("userList")[0].innerHTML + userString
-    console.log(document.getElementById(`${user.name.replaceAll(' ', '_')}userListItem`))
+   
 
 
   })
@@ -68,11 +86,12 @@ function genUserList(users, click) {
 
 }
 (async () => {
-  genUserList([{ name: "John Doe"}, { name: "Jill Doe", email: "jilldoe@example.com" }]).forEach((user) => {
+  var users
+  fixDefaultUser("Bob Boe")
+  genUserList(["John Doe",{name:"Jill Doe",email:"jilldoe@example.com"}]).forEach((user) => {
     document.getElementById(`${user.name.replaceAll(' ', '_')}userListItem`).addEventListener('click', function (e) { 
       document.getElementsByClassName('userName')[0].innerHTML = user.name
       document.getElementsByClassName('profilePic')[0].src = user.profile
-      console.log(UIkit.modal())
       UIkit.modal(document.getElementById('user-selector')).hide();
     })
   })
