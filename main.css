@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('fonts/font.css');
 
 .background {
     z-index: -1;
@@ -91,7 +91,7 @@
     left: 50%;
     transform: translate(-50%, -10%);
     position: relative;
-    margin-left: 4.7vw;
+    margin-left: 4.9vw;
     margin-bottom: 0;
 }
 

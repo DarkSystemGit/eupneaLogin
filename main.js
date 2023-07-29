@@ -1,5 +1,6 @@
 //let users = lightdm.users
 /*function login(user,passwd,sess){
+  alert(sess)
   lightdm.show_prompt.connect((text, type) => {
     if (type == 0) // Login
       lightdm.respond(user);
@@ -7,26 +8,34 @@
       lightdm.respond(passwd);
   })
   lightdm.authentication_complete.connect(() => {
-    lightdm.start_session(sess);
+    lightdm.start_session(sess[0]);
   })
   
 lightdm.authenticate();
 }*/
 function fixDefaultUser(user){
-  if (typeof user === "string"){
-    user = {name:user}
-  }else{
-    user = {name:user[0]}
-  }
+  user = user[0]
   if (!user.profile) {
-    user.profile = 'Profile.svg'
+    user.profile = 'images/Profile.svg'
   }
   if (!user.email) {
     user.email = ''
   }
+  console.log(user)
   document.getElementsByClassName('userName')[0].innerHTML = user.name
       document.getElementsByClassName('profilePic')[0].src = user.profile
 
+}
+function fixUsers(users){
+  var patchedUsers =[]
+  users.forEach((user)=>{
+    var patchedUser={}
+    patchedUser.name = user.display_name
+    patchedUser.email = user.name
+    patchedUser.sess = user.session
+    patchedUsers.push(patchedUser)
+  })
+  return patchedUsers
 }
 function forEach(list, fn) {
   //console.log(list)
@@ -71,7 +80,7 @@ function genUserList(users, click) {
       user = {name:user}
     }
     if (!user.profile) {
-      user.profile = 'Profile.svg'
+      user.profile = 'images/Profile.svg'
     }
     if (!user.email) {
       user.email = ''
@@ -86,9 +95,18 @@ function genUserList(users, click) {
 
 }
 (async () => {
-  var users
-  fixDefaultUser("Bob Boe")
-  genUserList(["John Doe",{name:"Jill Doe",email:"jilldoe@example.com"}]).forEach((user) => {
+  var users =[
+    { name: "clarkk", real_name: "Superman", display_name: "Clark Kent", language: "en_US", layout: null, session: "gnome", logged_in: false },
+    { name: "brucew", real_name: "Batman", display_name: "Bruce Wayne", language: "en_US", layout: null, session: "cinnamon", logged_in: false },
+    { name: "peterp", real_name: "Spiderman", display_name: "Peter Parker", language: "en_US", layout: null, session: "gnome", logged_in: true },
+    { name: "clarkk2", real_name: "Superman", display_name: "Clark Kent", language: "en_US", layout: null, session: "gnome", logged_in: false },
+    { name: "brucew2", real_name: "Batman", display_name: "Bruce Wayne", language: "en_US", layout: null, session: "cinnamon", logged_in: false },
+    { name: "peterp2", real_name: "Spiderman", display_name: "Peter Parker", language: "en_US", layout: null, session: "gnome", logged_in: true }
+  ];
+  users = fixUsers(users)
+  console.log(users[0].name)
+  fixDefaultUser(users)
+  genUserList(users).forEach((user) => {
     document.getElementById(`${user.name.replaceAll(' ', '_')}userListItem`).addEventListener('click', function (e) { 
       document.getElementsByClassName('userName')[0].innerHTML = user.name
       document.getElementsByClassName('profilePic')[0].src = user.profile
