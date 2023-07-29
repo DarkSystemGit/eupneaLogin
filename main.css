@@ -112,6 +112,7 @@
 }
 
 .userPic {
+    margin-right: 10vw;
     border-radius: 50%;
     height: 7vh;
     width: 7vh;
