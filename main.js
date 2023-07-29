@@ -1,4 +1,4 @@
-//let users = lightdm.users
+var users = lightdm.users
 function login(user,passwd){
   lightdm.cancel_authentication()
   if(!user.sess){
@@ -100,14 +100,7 @@ function genUserList(users, click) {
 
 }
 (async () => {
-  var users =[
-    { name: "clarkk", real_name: "Superman", display_name: "Clark Kent", language: "en_US", layout: null, session: "gnome", logged_in: false },
-    { name: "brucew", real_name: "Batman", display_name: "Bruce Wayne", language: "en_US", layout: null, session: "cinnamon", logged_in: false },
-    { name: "peterp", real_name: "Spiderman", display_name: "Peter Parker", language: "en_US", layout: null, session: "gnome", logged_in: true },
-    { name: "clarkk2", real_name: "Superman", display_name: "Clark Kent", language: "en_US", layout: null, session: "gnome", logged_in: false },
-    { name: "brucew2", real_name: "Batman", display_name: "Bruce Wayne", language: "en_US", layout: null, session: "cinnamon", logged_in: false },
-    { name: "peterp2", real_name: "Spiderman", display_name: "Peter Parker", language: "en_US", layout: null, session: "gnome", logged_in: true }
-  ];
+  
   users = fixUsers(users)
   console.log(users[0].name)
   fixDefaultUser(users)

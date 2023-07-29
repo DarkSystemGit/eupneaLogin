@@ -37,7 +37,7 @@
 .passwd {
     background-color: rgba(206, 205, 205, 0.527);
     padding-left: 10px;
-    height: 5vh;
+    height: 4vh;
     border: none;
     width: 12vw;
     border-radius: 25px;
@@ -49,9 +49,9 @@
 
 .passwdBtn {
     background-color: rgba(206, 205, 205, 0.527);
-    height: 5vh;
+    height: 4vh;
     border: none;
-    width: 5vh;
+    width: 4vh;
     margin-left: 1vw;
     border-radius: 25px;
     display: flex;
@@ -59,10 +59,10 @@
 }
 
 .passwdBtnIcon {
-    margin-top: 1.72%;
+    margin-top: 2.82%;
     z-index: 1;
     position: absolute;
-    margin-left: 87.72%;
+    margin-left: 89%;
     /*color: rgba(255, 255, 255, 0.692);*/
 }
 
@@ -81,9 +81,9 @@
 }
 
 .more {
-    margin-left: 87%;
+    margin-left: 85%;
     position: relative;
-    bottom: 6.5vh;
+    bottom: 4.6vh;
 }
 
 .profile {
@@ -91,8 +91,8 @@
     left: 50%;
     transform: translate(-50%, -10%);
     position: relative;
-    margin-left: 4.9vw;
-    margin-bottom: 0;
+    margin-left: 4.5vw;
+    margin-bottom: 2%;
 }
 
 .profilePic {
