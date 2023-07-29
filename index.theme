@@ -1,0 +1,6 @@
+[theme]
+name=Eupnea
+description=Eupnea Login Theme
+engine=web-greeter
+url=index.html
+session=ubuntu

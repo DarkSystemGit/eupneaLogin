@@ -1,6 +1,11 @@
 //let users = lightdm.users
-/*function login(user,passwd,sess){
-  alert(sess)
+function login(user,passwd){
+  lightdm.cancel_authentication()
+  if(!user.sess){
+    var sess = lightdm.default_session
+  }else{
+    var sess = user.sess
+  }
   lightdm.show_prompt.connect((text, type) => {
     if (type == 0) // Login
       lightdm.respond(user);
@@ -8,11 +13,11 @@
       lightdm.respond(passwd);
   })
   lightdm.authentication_complete.connect(() => {
-    lightdm.start_session(sess[0]);
+    lightdm.start_session(sess);
   })
   
-lightdm.authenticate();
-}*/
+  lightdm.authenticate();
+}
 function fixDefaultUser(user){
   user = user[0]
   if (!user.profile) {
