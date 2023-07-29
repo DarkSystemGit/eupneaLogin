@@ -113,7 +113,7 @@ function genUserList(users, click) {
   })
   while (true) {
     var user = await getForm()
-    alert(user)
+    login(user)
   }
 
 })()
