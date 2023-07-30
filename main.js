@@ -1,4 +1,5 @@
 var users = lightdm.users
+alert(JSON.stringify(lightdm.sessions))
 /*var users = [
   { name: "clarkk", real_name: "Superman", display_name: "Clark Kent", language: "en_US", layout: null, session: "gnome", logged_in: false },
    { name: "brucew", real_name: "Batman", display_name: "Bruce Wayne", language: "en_US", layout: null, session: "cinnamon", logged_in: false },
