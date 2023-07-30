@@ -25,6 +25,7 @@
 }
 
 .loginForm {
+    background-color: blue;
     color: white;
     position: absolute;
     top: 50%;
@@ -59,10 +60,10 @@
 }
 
 .passwdBtnIcon {
-    margin-top: 2.82%;
+    margin-top: .5vh;
     z-index: 1;
     position: absolute;
-    margin-left: 89%;
+    margin-left: 88.5%;
     /*color: rgba(255, 255, 255, 0.692);*/
 }
 
@@ -83,7 +84,7 @@
 .more {
     margin-left: 85%;
     position: relative;
-    bottom: 4.6vh;
+    bottom: 5.5vh;
 }
 
 .profile {
